@@ -1,0 +1,112 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{shapedna}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ba2cbfcb3f2671460dc76fd7f5865b48}{%
+           family={Reuter},
+           familyi={R\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9712ea61fdf6b05404d913e0d63b1a0b}{%
+           family={Wolter},
+           familyi={W\bibinitperiod},
+           given={Franz-Erich},
+           giveni={F\bibinithyphendelim E\bibinitperiod}}}%
+        {{hash=f8ceed71cc36aacbf66e939646baede3}{%
+           family={Peinecke},
+           familyi={P\bibinitperiod},
+           given={Niklas},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{e98aeab4f0b97c5504b1f2fbe327c400}
+      \strng{fullhash}{e98aeab4f0b97c5504b1f2fbe327c400}
+      \strng{bibnamehash}{e98aeab4f0b97c5504b1f2fbe327c400}
+      \strng{authorbibnamehash}{e98aeab4f0b97c5504b1f2fbe327c400}
+      \strng{authornamehash}{e98aeab4f0b97c5504b1f2fbe327c400}
+      \strng{authorfullhash}{e98aeab4f0b97c5504b1f2fbe327c400}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper introduces a method to extract ‘Shape-DNA’, a numerical fingerprint or signature, of any 2d or 3d manifold (surface or solid) by taking the eigenvalues (i.e. the spectrum) of its Laplace–Beltrami operator. Employing the Laplace–Beltrami spectra (not the spectra of the mesh Laplacian) as fingerprints of surfaces and solids is a novel approach. Since the spectrum is an isometry invariant, it is independent of the object's representation including parametrization and spatial position. Additionally, the eigenvalues can be normalized so that uniform scaling factors for the geometric objects can be obtained easily. Therefore, checking if two objects are isometric needs no prior alignment (registration/localization) of the objects but only a comparison of their spectra. In this paper, we describe the computation of the spectra and their comparison for objects represented by NURBS or other parametrized surfaces (possibly glued to each other), polygonal meshes as well as solid polyhedra. Exploiting the isometry invariance of the Laplace–Beltrami operator we succeed in computing eigenvalues for smoothly bounded objects without discretization errors caused by approximation of the boundary. Furthermore, we present two non-isometric but isospectral solids that cannot be distinguished by the spectra of their bodies and present evidence that the spectra of their boundary shells can tell them apart. Moreover, we show the rapid convergence of the heat trace series and demonstrate that it is computationally feasible to extract geometrical data such as the volume, the boundary length and even the Euler characteristic from the numerically calculated eigenvalues. This fact not only confirms the accuracy of our computed eigenvalues, but also underlines the geometrical importance of the spectrum. With the help of this Shape-DNA, it is possible to support copyright protection, database retrieval and quality assessment of digital data representing surfaces and solids. A patent application based on ideas presented in this paper is pending.}
+      \field{issn}{0010-4485}
+      \field{journaltitle}{Computer-Aided Design}
+      \field{note}{Symposium on Solid and Physical Modeling 2005}
+      \field{number}{4}
+      \field{title}{Laplace–Beltrami spectra as ‘Shape-DNA’ of surfaces and solids}
+      \field{volume}{38}
+      \field{year}{2006}
+      \field{pages}{342\bibrangedash 366}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.cad.2005.10.011
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0010448505001867
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0010448505001867
+      \endverb
+      \keyw{Laplace–Beltrami operator,Shape invariants,Fingerprints,Shape matching,Database retrieval,Copyright protection,NURBS,Parameterized surfaces and solids,Polygonal meshes}
+    \endentry
+    \entry{hyp_w}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=8ce0d7213dfde041dfdbabd28e8b8342}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3fa0b98bdb0330cc0ea22e655fd964c2}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wen},
+           giveni={W\bibinitperiod}}}%
+        {{hash=545bceebb758f906e35c23284bcf915b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yalin},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5b323b087c7614f8bdd08d33810db33}
+      \strng{fullhash}{e5b323b087c7614f8bdd08d33810db33}
+      \strng{bibnamehash}{e5b323b087c7614f8bdd08d33810db33}
+      \strng{authorbibnamehash}{e5b323b087c7614f8bdd08d33810db33}
+      \strng{authornamehash}{e5b323b087c7614f8bdd08d33810db33}
+      \strng{authorfullhash}{e5b323b087c7614f8bdd08d33810db33}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{Shape Analysis with Hyperbolic Wasserstein Distance}
+      \field{year}{2016}
+      \field{pages}{5051\bibrangedash 5061}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/CVPR.2016.546
+      \endverb
+      \keyw{Shape;Harmonic analysis;Surface morphology;Three-dimensional displays;Shape measurement;Transportation}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

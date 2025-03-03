@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{biblatex}
+\addbibresource{refs.bib}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{Shape comparison metrics - a short report}
+\author{Martin Metodiev}
+\date{\today}
+
+\begin{document}
+\maketitle	
+
+
+% Optional TOC
+% \tableofcontents
+% \pagebreak
+
+%--Paper--
+
+\section{Introduction}
+
+Here we review some useful metrics. We will focus on shape analysis metrics that incorporate information from both the vertices and connectivity of a mesh dataset \cite{shapedna}, \cite{hyp_w}. Ideally, a shape metric will be independent of the relative spatial location of two objects, and also rotational and scaling variations. An intuitive approach is to use the Hausdorff distance as a measure of similarity between two sets \( A \) and \( B \) is defined as:
+
+\[
+d_H(A, B) = \max \left( \sup_{a \in A} \inf_{b \in B} \| a - b \|, \sup_{b \in B} \inf_{a \in A} \| a - b \| \right)
+\]
+
+Where:
+\begin{itemize}
+    \item \( A \) and \( B \) are the two sets (meshes) represented as sets of points,
+    \item \( a \) and \( b \) are points in meshes \( A \) and \( B \), respectively,
+    \item \( \| a - b \| \) is the Euclidean distance between points \( a \) and \( b \),
+    \item The first term \( \sup_{a \in A} \inf_{b \in B} \| a - b \| \) measures the greatest distance from any point in mesh \( A \) to the closest point in mesh \( B \),
+    \item The second term \( \sup_{b \in B} \inf_{a \in A} \| a - b \| \) measures the greatest distance from any point in mesh \( B \) to the closest point in mesh \( A \).
+\end{itemize}
+
+
+\pagebreak
+\section{Section 1}
+
+
+
+
+
+\end{document}
