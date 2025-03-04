@@ -3,11 +3,14 @@ from numpy.ma import shape
 from scipy.sparse import data
 import mesh
 from scipy.spatial.distance import euclidean
-import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 from sklearn.manifold import TSNE
 from glob import glob
+
+
+import matplotlib.pyplot as plt
+
 
 
 def hausdorff_distance(mesh1:mesh.Mesh, mesh2:mesh.Mesh) -> float:
@@ -90,7 +93,7 @@ cubes = [mesh.Mesh(path) for path in cubes_paths]
 
 deformed_pyramids_paths = glob("data/simple_shapes/*deformed_pyramid*")
 deformed_pyramids = [mesh.Mesh(path) for path in deformed_pyramids_paths]
-print(deformed_pyramids_paths)
+
 
 def_sph_eigs = np.array([o.eigenvalues for o in deformed_spheres]).T
 sph_eigs = np.array([o.eigenvalues for o in spheres]).T
@@ -98,28 +101,36 @@ def_c_eigs = np.array([o.eigenvalues for o in deformed_cubes]).T
 c_eigs = np.array([o.eigenvalues for o in cubes]).T
 def_p_eigs = np.array([o.eigenvalues for o in deformed_pyramids]).T
 
-print(def_sph_eigs.shape, sph_eigs.shape, def_c_eigs.shape, c_eigs.shape, def_p_eigs.shape)
 
-all_data = np.hstack([def_sph_eigs, sph_eigs, def_c_eigs, c_eigs, def_p_eigs])
-print(all_data.shape)
 
-X_embedded = TSNE(n_components=2, learning_rate='auto', init='random', perplexity=5, early_exaggeration=5).fit_transform(all_data )
+all_data = np.hstack([def_sph_eigs, sph_eigs, def_c_eigs, c_eigs, def_p_eigs]).T
 
+
+print("running tsne...")
+model = TSNE(n_components=2, learning_rate="auto", init="random", perplexity=5, early_exaggeration=5, random_state=16)
+
+
+print("learning rate: ", model.learning_rate)
+
+embedding = model.fit_transform(all_data)
+
+print("done")
 
 categories = {
-    "deformed_sphere": (0, 11, "blue"),
-    "sphere": (11, 23, "red"),
-    "deformed_cubes": (23, 33, "green"),
-    "cubes": (33, 45, "purple"),
-    "deformed_pyramids": (45, 55, "orange"),
+    "deformed_sphere": (0, 51, "#1f77b4"),  # 51 points
+    "sphere": (51, 103, "#ff7f0e"),  # 52 points
+    "deformed_cubes": (103, 153, "#2ca02c"),  # 50 points
+    "cubes": (153, 205, "#d62728"),  # 52 points
+    "deformed_pyramids": (205, 255, "#9467bd"),  # 50 points
 }
 
-plt.figure(figsize=(8, 6))
+
+fig = plt.figure(figsize=(8, 6))
 
 
 for label, (start, end, color) in categories.items():
     print(label, start, end)
-    plt.scatter(X_embedded[start:end, 0], X_embedded[start:end, 1], 
+    plt.scatter(embedding[start:end, 0], embedding[start:end, 1], 
                 label=label, color=color, alpha=0.7, edgecolors="k", s=46)
 
 # Formatting
@@ -129,5 +140,8 @@ plt.title("Eigenvalues embedding")
 plt.legend()
 #plt.grid(True)
 plt.savefig("figs/results/tsne_embedding.png", dpi=300)
-plt.show()
+#plt.show()
 plt.close()
+
+
+

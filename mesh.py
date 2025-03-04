@@ -64,7 +64,7 @@ class Mesh():
         return points_array, np.array(faces_array), num_points
 
 
-    def laplace_beltrami_eigenvalue(self,  k:int=50) -> Tuple[np.ndarray, np.ndarray]:
+    def laplace_beltrami_eigenvalue(self,  k:int=75) -> Tuple[np.ndarray, np.ndarray]:
 
         """Inspired by https://github.com/Deep-MI/LaPy/blob/5d0cc267125f503cb4ba3f44a03fb076dc8f3507/lapy/solver.py"""
 
