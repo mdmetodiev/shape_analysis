@@ -303,7 +303,7 @@ if __name__ == "__main__":
               'shifted_sphere': create_sphere(centre=(0,0,1)),
               'deformed_sphere': create_deformed_sphere(),
               'cube': create_cube(),
-              'shifted_cube': create_cube(xmin=0.5,xmax=2), 
+              'shifted_cube': create_cube(xmin=0.5,xmax=1.5, ymin=0.5,ymax=1.5, zmin=0.5, zmax=1.5), 
               'pyramid': create_pyramid(inverted=False),
               'inverted_pyramid': create_pyramid(inverted=True),}
 
@@ -316,31 +316,32 @@ if __name__ == "__main__":
         pass
 
     ##generate some more data
-    for i in range(10):
+    n_shapes = 50
+    for i in range(n_shapes):
         x,y,z = np.random.uniform(-3,3,size=3)
         _sphere = create_sphere((x,y,z))
         save_vtk(_sphere, f"data/simple_shapes/random_sphere_{i}.vtk")
 
-    for i in range(10):    
+    for i in range(n_shapes):    
         x,y,z = np.random.uniform(-3,3,size=3)
         def_level = np.random.uniform(0.05, 0.13, 1)
         _sphere = create_deformed_sphere((x,y,z), noise_scale=def_level)
         save_vtk(_sphere, f"data/simple_shapes/random_deformed_sphere_{i}.vtk") 
 
-    for i in range(10):
+    for i in range(n_shapes):
         x0,x1, y0,y1, z0,z1 = np.random.uniform(-3,3,size=6)
         _cube = create_cube(divisions=5,xmin=x0,xmax=x1,ymin=y0,ymax=y1,zmin=z0,zmax=z1)
         save_vtk(_cube, f"data/simple_shapes/random_cube_{i}.vtk")
         
-    for i in range(10):
+    for i in range(n_shapes):
         x0,x1, y0,y1, z0,z1 = np.random.uniform(-3,3,size=6)
         def_level = np.random.uniform(0.05, 0.13, 1)
         _cube = create_deformed_cube(divisions=5, noise_scale=def_level,xmin=x0,xmax=x1,ymin=y0,ymax=y1,zmin=z0,zmax=z1)
         save_vtk(_cube, f"data/simple_shapes/random_deformed_cube_{i}.vtk")
 
           
-    for i in range(10):
-        twist_level = np.random.uniform(40,50, 1) 
+    for i in range(n_shapes):
+        twist_level = np.random.uniform(15,75, 1) 
         def_level = np.random.uniform(0.05, 0.13, 1)
         _pyr = create_deformed_pyramid(twist_angle=twist_level, noise_scale=def_level) 
         save_vtk(_pyr, f"data/simple_shapes/random_deformed_pyramid_{i}.vtk")
